@@ -54,4 +54,27 @@ These methods are used to compare various types of data structures:
 | `assertSetEqual(a, b)`           | Sets or frozensets|
 | `assertDictEqual(a, b)`          | Dictionaries     |
 
----
+### Skipping tests
+
+`unittest` provides a mechanism for skipping tests, conditionally or
+unconditionally.
+
+It uses the following decorators for implementing the skipping
+mechanism:
+
+-  `unittest.skip(reason)`: Unconditionally skips the
+decorated test. reason should describe why the test is
+being skipped.
+- `unittest.skipIf(condition, reason)`: Skips the
+decorated test if condition is true.
+- `unittest.skipUnless(condition, reason)`: Skips the
+decorated test unless condition is true.
+- `unittest.expectedFailure()`: Marks the test as an
+expected failure. If the test fails when it runs, the test is
+not counted as a failure.
+
+### assertRaises()
+
+The `assertRaises()` method is used to check if the code block raises the
+exception mentioned in assertRaises(). If the code raises the exception
+then the test passes; otherwise, it fails. 
